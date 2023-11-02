@@ -13,9 +13,7 @@ export function useBalances() {
   const [nativeBalance, setNativeBalance] = useState<NativeBalance>();
   const { address } = useAppContext();
 
-  const fetchTokenBalance = useCallback(async () => {
-    //address is an empty string
-    
+  const fetchTokenBalance = useCallback(async () => {    
     try {
       if (!address) return;
       if (!Moralis.Core.isStarted) {
